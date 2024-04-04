@@ -44,7 +44,7 @@ function Header() {
     <span class="dropdownArrow">&#9662;</span> 
     <div class="dropdown">
       {user && <span class="logoutButton" onClick={() => { firebase.auth().signOut(); history.push('/') }}>Logout</span>}
-      {user && <span class="logoutButton" onClick={() => {  history.push('/productview') }}>My Products</span>}
+      {user && <span class="logoutButton" onClick={() => {  history.push('/productview') }}>My ADS</span>}
     </div>
   </div>
   <hr />

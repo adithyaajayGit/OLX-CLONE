@@ -35,8 +35,11 @@ function Editpost() {
   }, [firebase, history, id]);
 
   const handleImageChange = (e) => {
-    setUrl(e.target.files[0]); // Set URL file when input changes
-  };
+  const file = e.target.files[0];
+  if (file) {
+    setUrl(URL.createObjectURL(file)); // Set URL file when input changes
+  }
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -77,7 +80,7 @@ function Editpost() {
 
   return (
     <div className="edit-post-container">
-      <h1>Edit Product</h1>
+      <h1>Edit AD</h1>
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label htmlFor="name">Name:</label>
@@ -101,6 +104,7 @@ function Editpost() {
 
         <button type="submit" disabled={loading}>Update</button>
       </form>
+      <br></br>
       {url && <img className="displayimage" src={url} />} {/* Display updated image */}
     </div>
   );
