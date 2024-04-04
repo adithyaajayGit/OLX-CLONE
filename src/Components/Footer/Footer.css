@@ -1,27 +1,51 @@
 .footerParentDiv {
-  width: 100vw;
+  width: 100%;
+  background: #f8f9fa; /* Light gray background */
 }
+
 .footerParentDiv .content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background: #ebeeef;
-  padding: 16px;
+  align-items: flex-start; /* Align items to the top */
+  padding: 20px; /* Increased padding */
 }
+
 .footerParentDiv .content .heading {
-  font-size: 24px;
-  font-weight: bolder;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333; /* Dark text color */
+}
+
+.footerParentDiv .content .list ul {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0;
+}
+
+.footerParentDiv .content .list ul li {
+  margin-bottom: 8px;
+  color: #555; /* Slightly darker text color */
 }
 
 .footerParentDiv .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 12px 20px; /* Increased padding */
   background: #002f34;
   color: whitesmoke;
+  font-size: 14px; /* Smaller font size */
 }
 
-.footerParentDiv .footer p {
-  margin: 0;
+.footerParentDiv .footer p:first-child {
+  margin-right: 20px; /* Add space between the two paragraphs */
+}
+
+.footerParentDiv .footer a {
+  color: #ffc107; /* OLX brand color */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.footerParentDiv .footer a:hover {
+  color: #ffad00; /* Darker shade on hover */
 }

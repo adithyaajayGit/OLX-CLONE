@@ -1,6 +1,9 @@
+/* Post.css */
+
+/* General Styles */
 .moreView {
   margin: 16px 16px 24px;
-  padding: 16px 16px 32px;
+  padding: 16px;
   background-color: #ebeeef;
   border-radius: 4px;
 }
@@ -9,79 +12,111 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  margin-bottom: 12px; /* Added margin-bottom for spacing */
 }
-.heading :first-child {
+
+.heading span:first-child {
   font-size: 24px;
   color: #002f34;
+  font-weight: bold; /* Added font weight for emphasis */
 }
 
-.heading :last-child {
+/* Style for the View more button */
+.heading button {
+  padding: 8px 16px;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
   font-size: 14px;
-  color: #002f34;
-}
-
-.recommendations .cards {
-  display: flex;
-}
-
-.moreView .cards {
-  white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
-
-.card {
-  margin-right: 15px;
-  padding: 13px;
-  max-width: 222px;
-  width: 222px;
-  height: 270px;
-  display: inline-block;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.card .favorite {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.heading button:hover {
+  background-color: #003f7f;
 }
 
-.card .image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.card .image img {
-  height: 100px;
-  max-width: 100%;
-  max-height: 100%;
-  min-height: 100%;
-  text-align: center;
-}
-.card .content .rate {
-  margin-top: 10px;
-  font-size: larger;
-  font-weight: bold;
-}
-.card .content .kilometer {
-  font-size: medium;
-}
-.card .content .name {
-  font-size: small;
-}
-.card .date {
-  display: flex;
-  justify-content: flex-end;
-  font-size: small;
-}
 
 .recommendations {
-  margin: 16px 16px 24px;
+  margin: 16px;
 }
 
 .recommendations .heading span {
   font-size: 24px;
   color: #002f34;
+}
+
+/* Cards Styling */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: px; /* Adjusted gap between cards */
+  justify-content: space-between;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(50% - 5px); /* Two cards per row with reduced gap */
+  max-width: 250px; /* Decreased max-width for smaller cards */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.favorite {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; /* Decreased height for smaller images */
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.content {
+  padding: 10px; /* Adjusted padding for smaller content area */
+}
+
+.rate {
+  font-size: 16px; /* Decreased font size for rate */
+  font-weight: bold;
+  color: #333;
+}
+
+.kilometer {
+  font-size: 12px; /* Decreased font size for kilometer */
+  color: #777;
+}
+
+.name {
+  font-size: 20px; /* Decreased font size for name */
+  color: #333;
+  margin-top: 5px;
+}
+
+.date {
+  background-color: #f5f5f5;
+  padding: 8px; /* Adjusted padding for date */
+  text-align: center;
+  font-size: 12px; /* Decreased font size for date */
+  color: #777;
 }

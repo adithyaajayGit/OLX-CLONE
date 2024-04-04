@@ -7,7 +7,7 @@ function Banner() {
     <div className="bannerParentDiv">
       <div className="bannerChildDiv">
         <div className="menuBar">
-          <div className="categoryMenu">
+          {/* <div className="categoryMenu">
             <span>ALL CATEGORIES</span>
             <Arrow></Arrow> 
           </div>
@@ -19,7 +19,7 @@ function Banner() {
             <span>Scoot...</span>
             <span>Commercial & Other Ve...</span>
             <span>For Rent: House & Apart...</span>
-          </div>
+          </div> */}
         </div>
         <div className="banner">
           <img

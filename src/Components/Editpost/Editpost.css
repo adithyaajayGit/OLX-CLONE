@@ -1,0 +1,71 @@
+.edit-post-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .edit-post-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .edit-post-container form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .edit-post-container form input[type="text"],
+  .edit-post-container form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .edit-post-container form input[type="file"] {
+    margin-bottom: 20px;
+  }
+  
+  .edit-post-container form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #168126;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-post-container form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .edit-post-container form button:hover {
+    background-color: #42b300;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .displayimage{
+
+    width: 450px;
+    height: 350px;
+  }
+  
