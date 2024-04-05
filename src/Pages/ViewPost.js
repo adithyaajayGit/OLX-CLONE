@@ -7,6 +7,7 @@ function ViewPost(props) {
     return (
         <div>
             <Header />
+            <br/><br/><br/><br/><br/><br/>      
             <View/>
         </div>
     )

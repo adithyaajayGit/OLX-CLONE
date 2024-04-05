@@ -8,6 +8,7 @@ function Editpost() {
   const [name, setName] = useState('');
   const [category, setCategory] = useState('');
   const [price, setPrice] = useState('');
+  const [file, setFile] = useState(null); // State for file object
   const [url, setUrl] = useState(''); // State for image URL
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -35,11 +36,12 @@ function Editpost() {
   }, [firebase, history, id]);
 
   const handleImageChange = (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    setUrl(URL.createObjectURL(file)); // Set URL file when input changes
-  }
-};
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      setFile(selectedFile); // Set file object
+      setUrl(URL.createObjectURL(selectedFile)); // Set URL for preview
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,7 +49,11 @@ function Editpost() {
 
     try {
       const productRef = firebase.firestore().collection('products').doc(id);
-      let imageUrl = url ? await uploadImageToStorage(url) + `?${new Date().getTime()}` : null;
+
+      let imageUrl = null;
+      if (file) {
+        imageUrl = await uploadImageToStorage(file);
+      }
 
       await productRef.update({
         name,
@@ -105,7 +111,7 @@ function Editpost() {
         <button type="submit" disabled={loading}>Update</button>
       </form>
       <br></br>
-      {url && <img className="displayimage" src={url} />} {/* Display updated image */}
+      {url && <img className="displayimage" src={url} alt="Uploaded" />} {/* Display uploaded image */}
     </div>
   );
 }
