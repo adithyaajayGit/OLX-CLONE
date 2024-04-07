@@ -38,7 +38,7 @@ const editProduct = (productId) => {
 
 
 const deleteProduct = (productId) => {
-    const confirmDelete = window.confirm('Are you sure you want to delete this product?');
+    const confirmDelete = window.confirm('Are you sure you want to delete this AD?');
     if (confirmDelete) {
       firebase.firestore().collection('products').doc(productId).delete().then(() => {
         // Remove the deleted product from the state

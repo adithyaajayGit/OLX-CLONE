@@ -67,7 +67,7 @@ export default function Signup() {
             username: username,
             phone: phoneno,
           }).then(() => {
-            history.push('/login');
+            history.push('/');
           });
         });
       }).catch((error) => {
